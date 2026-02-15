@@ -1,82 +1,192 @@
+// {
+//   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+//   "modules": [
+//     "break",
+//     {
+//       "type": "host",
+//       "key": "╭─ "
+//     },
+//     {
+//       "type": "cpu",
+//       "key": "├─󰍛"
+//     },
+//     {
+//       "type": "gpu",
+//       "key": "├─󰘚"
+//     },
+//     {
+//       "type": "memory",
+//       "key": "├─󰑭"
+//     },
+//     {
+//       "type": "disk",
+//       "key": "├─"
+//     },
+//     {
+//       "type": "swap",
+//       "key": "╰─󰑭 (swap)"
+//     },
+//     "break",
+//     {
+//       "type": "os",
+//       "key": "╭─"
+//     },
+//     {
+//       "type": "kernel",
+//       "key": "├─"
+//     },
+//     {
+//       "type": "packages",
+//       "key": "├─󰏖"
+//     },
+//     {
+//       "type": "shell",
+//       "key": "╰─"
+//     },
+//     "break",
+//     {
+//       "type": "de",
+//       "key": "╭─"
+//     },
+//     {
+//       "type": "lm",
+//       "key": "├─󰧨"
+//     },
+//     {
+//       "type": "wm",
+//       "key": "├─"
+//     },
+//     {
+//       "type": "wmtheme",
+//       "key": "├─󰉼"
+//     },
+//     {
+//       "type": "terminal",
+//       "key": "╰─"
+//     },
+//     "break",
+//     {
+//       "type": "uptime",
+//       "key": "╭─󰥔 Uptime"
+//     },
+//     {
+//       "type": "datetime",
+//       "key": "├─ DateTime"
+//     },
+//     {
+//       "type": "battery",
+//       "key": "╰─󰁹 Battery"
+//     },
+//     "break"
+//   ]
+// }
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+    "bar": {
+      "char": {
+        "total": "─"
+      },
+      "width": 10
+    },
+    "percent": {
+      "type": 3,
+      "ndigits": 2
+    },
+    "key": {
+      "width": 16
+    },
+    "separator": ""
+  },
   "modules": [
     "break",
     {
-      "type": "host",
-      "key": "╭─ "
-    },
-    {
-      "type": "cpu",
-      "key": "├─󰍛"
-    },
-    {
-      "type": "gpu",
-      "key": "├─󰘚"
-    },
-    {
-      "type": "memory",
-      "key": "├─󰑭"
-    },
-    {
-      "type": "disk",
-      "key": "├─"
-    },
-    {
-      "type": "swap",
-      "key": "╰─󰑭 (swap)"
-    },
-    "break",
-    {
-      "type": "os",
-      "key": "╭─"
-    },
-    {
-      "type": "kernel",
-      "key": "├─"
-    },
-    {
-      "type": "packages",
-      "key": "├─󰏖"
-    },
-    {
-      "type": "shell",
-      "key": "╰─"
-    },
-    "break",
-    {
-      "type": "de",
-      "key": "╭─"
-    },
-    {
-      "type": "lm",
-      "key": "├─󰧨"
-    },
-    {
-      "type": "wm",
-      "key": "├─"
-    },
-    {
-      "type": "wmtheme",
-      "key": "├─󰉼"
-    },
-    {
-      "type": "terminal",
-      "key": "╰─"
-    },
-    "break",
-    {
-      "type": "uptime",
-      "key": "╭─󰥔 Uptime"
+      "type": "title",
+      "key": " ",
+      "keyWidth": 4,
+      "format": " {#36}{1}@{2}"
     },
     {
       "type": "datetime",
-      "key": "├─ DateTime"
+      "key": " ",
+      "format": "{#white}󰃮 {1}-{4}-{23} {14}:{18}:{20} ({22})"
+    },
+    "break",
+    {
+      "type": "host",
+      "key": " pc       "
+    },
+    {
+      "type": "os",
+      "key": " os       "
+    },
+    {
+      "type": "kernel",
+      "key": " kernel       "
+    },
+    {
+      "type": "wm",
+      "key": " wm       "
+    },
+    {
+      "type": "packages",
+      "key": "󰏖 packages ",
+    },
+    {
+      "type": "uptime",
+      "key": "󰥔 uptime   "
+    },
+    "break",
+    {
+      "type": "shell",
+      "key": " shell    "
+    },
+    {
+      "type": "terminal",
+      "key": " terminal "
+    },
+    {
+      "type": "terminalfont",
+      "key": " font     "
+    },
+    "break",
+    {
+      "type": "display",
+      "key": "󰍹 display {index} ",
+      "format": "{1}×{2}, {3}Hz [{7}]"
+    },
+    {
+      "type": "cpu",
+      "key": " cpu      "
+    },
+    {
+      "type": "gpu",
+      "key": "󰢮 gpu      "
+    },
+    {
+      "type": "memory",
+      "key": " ram      "
+    },
+    {
+      "type": "swap",
+      "key": "󰑭 swap      "
+    },
+    {
+      "type": "disk",
+      "folders": ["/"],
+      "key": " disk (/) ",
+      "format": "{13} {1} / {2} ({3})"
+    },
+    {
+      "type": "disk",
+      "folders": ["/home"],
+      "key": " disk (/home)  ",
+      "format": "{13} {1} / {2} ({3})"
     },
     {
       "type": "battery",
-      "key": "╰─󰁹 Battery"
-    },
-    "break"
+      "key": " battery  ",
+      "format": "{10} {4} ({5})"
+    }
   ]
 }
